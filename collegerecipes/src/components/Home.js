@@ -2,10 +2,14 @@ import "./Home.css";
 import curry from "../static/curry.svg";
 import beef from "../static/beef.svg";
 import { Link } from "react-router-dom";
+import arrow from "../static/arrow.svg"
 
 function Home() {
     return (
         <div className="Home">
+            <div className="arrow-right">
+                <Link className="home-menu-selection" to = "/menu"><p><img src={arrow} alt="None"></img></p></Link>
+            </div>
             <div className="home-image">
                 <img src={curry} className="bottom-left" alt="None"/>
             </div>
@@ -21,7 +25,6 @@ function Home() {
                    <Link className="home-add-selection" to = "/add"><p> &bull; Add Recipe</p></Link>
                    <Link className="home-about-selection" to = "/about"><p> &bull; About the Chef</p></Link>
             </div>
-
         </div>
     )
 }

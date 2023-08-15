@@ -102,3 +102,11 @@
 }
 
 .home-about-selection:hover {text-decoration: underline;}
+
+.arrow-right{
+    position: fixed;
+    right: 5%;
+    top: 40%;
+}
+
+.arrow-right:hover {cursor: pointer}
