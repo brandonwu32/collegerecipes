@@ -8,7 +8,7 @@ function Home() {
     return (
         <div className="Home">
             <div className="arrow-right">
-                <Link className="home-menu-selection" to = "/menu"><p><img src={arrow} alt="None"></img></p></Link>
+                <Link to = "/"><p><img src={arrow} alt="None"></img></p></Link>
             </div>
             <div className="home-image">
                 <img src={curry} className="bottom-left" alt="None"/>

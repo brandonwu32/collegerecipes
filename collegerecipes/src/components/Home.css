@@ -107,6 +107,7 @@
     position: fixed;
     right: 5%;
     top: 40%;
+    transition: 0.5s;
 }
 
-.arrow-right:hover {cursor: pointer}
+.arrow-right:hover {cursor: pointer; filter: invert(1); right: 4%}
