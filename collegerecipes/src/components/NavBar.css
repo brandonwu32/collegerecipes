@@ -1,0 +1,15 @@
+.navbar{
+    display: flex;
+    flex-direction: row;
+}
+
+.navitem{
+    text-decoration: none;
+    color: #988C8C;
+    font-family: Italiana;
+    font-size: 25pt;
+    padding-left: 80px;
+    transition: 0.5s;
+}
+
+.navitem:hover {color: white}
