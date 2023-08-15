@@ -37,24 +37,61 @@ function FoodItem() {
         })
         .catch(err=> console.log(err));
       }, []);
-      function oneUp(number){
+      function oneUp(){
         window.location.href = window.location.pathname.replace(itemNumber, parseInt(itemNumber) + 1)
+      }
+      function oneDown(){
+        if (parseInt(itemNumber) === 1){
+            window.location.href = window.location.pathname.replace("menuitem/" + itemNumber, "")
+            return
+        }
+        window.location.href = window.location.pathname.replace(itemNumber, parseInt(itemNumber) - 1)
+      }
+      function Bullet(text) {
+        let list = text.split("-")
+        let bulletList = []
+        list.map(bullet => {bulletList.push(<p className = "bullet">&bull; {bullet}</p>)});
+        return (
+            <div className = "list">
+                {bulletList}
+            </div>
+        );
       }
       useEffect(() => {
         if (item !== null){
             setItemValues(
-            <div>
-                {item.item_number}
-                {item.dish_name}
-                {item.ingredients}
-                {item.steps}
-                <img className = "foodpic" src = {item.image} alt = "none"></img>
-                <img className = "right-arrow" onClick = {() => {oneUp()}} src = {arrow} alt = "none"></img>
+            <div className = "food-item">
+                <img className = "arrow-right" onClick = {() => {oneUp()}} src = {arrow} alt = "none"></img>
+                <img className = "arrow-left" onClick = {() => {oneDown()}} src = {arrow} alt = "none"></img>
+                <div className = "food-item-body">
+                    <div className = "food-item-top">
+                        <div className = "dish">
+                            {item.dish_name}
+                        </div>
+                        <div className = "page-number">
+                            {item.item_number}
+                        </div>
+                    </div>
+                    <div className = "food-item-middle">
+                        <img className = "foodpic" src = {item.image} alt = "none"></img>
+                        <div className = "ingredients">
+                            <h1 className = "food-item-title">Ingredients</h1>
+                            {Bullet(item.ingredients)}
+                        </div>
+                    </div>
+                    <div className = "food-item-bottom">
+                        <div className = "steps">
+                            <h1 className = "food-item-title">Steps</h1>
+                            {Bullet(item.steps)}
+                        </div>
+                    </div>
+                </div>
             </div>
             );
         }
 
       }, [item])
+
     return (
         <div>{itemValues}</div>
     );

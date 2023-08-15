@@ -5,7 +5,7 @@ function NavBar() {
     return (
         <div className="navbar">
             <Link className="navitem" to = "/"><p>Home</p></Link>
-            <Link className="navitem" to = "/"><p>Menu</p></Link>
+            <Link className="navitem" to = "/menu"><p>Menu</p></Link>
         </div>
     )
 }
