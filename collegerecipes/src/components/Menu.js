@@ -1,5 +1,6 @@
 import "./Menu.css";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 function Menu() {
@@ -52,25 +53,54 @@ function Menu() {
       }, [menuItems])
     return (
         <div className="menu">
-            <div className="breakfast-items">
-                {breakfasts.map(item => (
-                    <p>{item.item_number}, {item.dish_name}</p>
-                ))}
+            <h1 className="menu-title">Menu</h1>
+            <div className="top">
+                <div className="breakfast-items">
+                    <h1>Breakfast</h1>
+                    {breakfasts.map(item => (
+                        <div>
+                            <Link className="item" to = {"/menuitem/" + item.item_number}>
+                                <p>{item.dish_name}</p>
+                                <p>{item.item_number}</p>
+                            </Link>
+                        </div>
+                    ))}
+                </div>
+                <div className="lunch-items">
+                    <h1>Lunch</h1>
+                    {lunches.map(item => (
+                        <div>
+                            <Link className="item" to = {"/menuitem/" + item.item_number}>
+                                <p>{item.dish_name}</p>
+                                <p>{item.item_number}</p>
+                            </Link>
+                        </div>
+                    ))}
+                </div>
             </div>
-            <div className="breakfast-items">
-                {lunches.map(item => (
-                    <p>{item.item_number}, {item.dish_name}</p>
-                ))}
-            </div>
-            <div className="breakfast-items">
-                {dinners.map(item => (
-                    <p>{item.item_number}, {item.dish_name}</p>
-                ))}
-            </div>
-            <div className="breakfast-items">
-                {desserts.map(item => (
-                    <p>{item.item_number}, {item.dish_name}</p>
-                ))}
+            <div className="bottom">
+                <div className="dinner-items">
+                    <h1>Dinner</h1>
+                    {dinners.map(item => (
+                        <div>
+                            <Link className="item" to = {"/menuitem/" + item.item_number}>
+                                <p>{item.dish_name}</p>
+                                <p>{item.item_number}</p>
+                            </Link>
+                        </div>
+                    ))}
+                </div>
+                <div className="dessert-items">
+                    <h1>Dessert</h1>
+                    {desserts.map(item => (
+                        <div>
+                            <Link className="item" to = {"/menuitem/" + item.item_number}>
+                                <p>{item.dish_name}</p>
+                                <p>{item.item_number}</p>
+                            </Link>
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     );
