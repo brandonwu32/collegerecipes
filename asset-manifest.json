@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/collegerecipes/static/css/main.bbc4a5c4.css",
-    "main.js": "/collegerecipes/static/js/main.518b48f9.js",
-    "static/js/787.08395c4b.chunk.js": "/collegerecipes/static/js/787.08395c4b.chunk.js",
-    "static/media/curry.svg": "/collegerecipes/static/media/curry.d1091592988e876edfd8ad1959650d0a.svg",
-    "static/media/Inter-VariableFont_slnt,wght.ttf": "/collegerecipes/static/media/Inter-VariableFont_slnt,wght.aadb65ac45347ff46699.ttf",
-    "static/media/beef.svg": "/collegerecipes/static/media/beef.e792c1a2c1d9608be52f773726f99e0f.svg",
-    "static/media/Italiana-Regular.ttf": "/collegerecipes/static/media/Italiana-Regular.2d0e370dde5190d0d6a0.ttf",
-    "index.html": "/collegerecipes/index.html",
-    "static/media/arrow.svg": "/collegerecipes/static/media/arrow.32fd8dc7a7807757d067ac74b536d782.svg",
-    "main.bbc4a5c4.css.map": "/collegerecipes/static/css/main.bbc4a5c4.css.map",
-    "main.518b48f9.js.map": "/collegerecipes/static/js/main.518b48f9.js.map",
-    "787.08395c4b.chunk.js.map": "/collegerecipes/static/js/787.08395c4b.chunk.js.map"
+    "main.css": "/collegerecipes/collegerecipes/static/css/main.63ae0459.css",
+    "main.js": "/collegerecipes/collegerecipes/static/js/main.03f7ff83.js",
+    "static/js/787.08395c4b.chunk.js": "/collegerecipes/collegerecipes/static/js/787.08395c4b.chunk.js",
+    "static/media/curry.svg": "/collegerecipes/collegerecipes/static/media/curry.d1091592988e876edfd8ad1959650d0a.svg",
+    "static/media/Inter-VariableFont_slnt,wght.ttf": "/collegerecipes/collegerecipes/static/media/Inter-VariableFont_slnt,wght.aadb65ac45347ff46699.ttf",
+    "static/media/beef.svg": "/collegerecipes/collegerecipes/static/media/beef.e792c1a2c1d9608be52f773726f99e0f.svg",
+    "static/media/Italiana-Regular.ttf": "/collegerecipes/collegerecipes/static/media/Italiana-Regular.2d0e370dde5190d0d6a0.ttf",
+    "index.html": "/collegerecipes/collegerecipes/index.html",
+    "static/media/arrow.svg": "/collegerecipes/collegerecipes/static/media/arrow.32fd8dc7a7807757d067ac74b536d782.svg",
+    "main.63ae0459.css.map": "/collegerecipes/collegerecipes/static/css/main.63ae0459.css.map",
+    "main.03f7ff83.js.map": "/collegerecipes/collegerecipes/static/js/main.03f7ff83.js.map",
+    "787.08395c4b.chunk.js.map": "/collegerecipes/collegerecipes/static/js/787.08395c4b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bbc4a5c4.css",
-    "static/js/main.518b48f9.js"
+    "static/css/main.63ae0459.css",
+    "static/js/main.03f7ff83.js"
   ]
 }
