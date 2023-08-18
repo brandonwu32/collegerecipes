@@ -4,7 +4,6 @@ import beef from "../static/beef.svg";
 import { Link } from "react-router-dom";
 import arrow from "../static/arrow.svg"
 import Fade from "react-reveal/Fade";
-import Flash from "react-reveal/Flash";
 
 
 function Home() {
