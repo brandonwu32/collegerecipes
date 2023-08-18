@@ -1,11 +1,14 @@
 import './FoodItem.css';
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import axios from "axios";
 import arrow from "../static/arrow.svg";
+import {Link, useLocation } from "react-router-dom";
+import Fade from "react-reveal/Fade";
 
-function FoodItem() {
-    const { itemNumber } = useParams();
+function FoodItem(props) {
+    const location = useLocation();
+    const { fromNumber } = location.state;
+    console.log(fromNumber);
     const [item, setItem] = useState(null);
     const [pages, setPages] = useState(0)
     const [itemValues, setItemValues] = useState(null);
@@ -30,26 +33,26 @@ function FoodItem() {
               steps: entry["Steps"],
               image: entry["Image"]
             }
-            if (item.item_number === parseInt(itemNumber)){
+            if (item.item_number === parseInt(fromNumber)){
                 setItem(item);
             }
           });
         })
         .catch(err=> console.log(err));
-      }, []);
+      }, [fromNumber]);
       function oneUp(){
-        if (parseInt(itemNumber) === pages) {
+        if (parseInt(fromNumber) === pages) {
             alert("This is the last page of the cookbook");
             return
         }
-        window.location.href = window.location.pathname.replace(itemNumber, parseInt(itemNumber) + 1)
     }
       function oneDown(){
-        if (parseInt(itemNumber) === 1){
-            window.location.href = window.location.pathname.replace("menuitem/" + itemNumber, "")
+        if (parseInt(fromNumber) === 1){
+            console.log(window.location.pathname)
+            window.location.href = window.location.pathname.replace("menuitem/" + fromNumber, "home")
             return
         }
-        window.location.href = window.location.pathname.replace(itemNumber, parseInt(itemNumber) - 1)
+        window.location.href = window.location.pathname.replace(fromNumber, parseInt(fromNumber) - 1)
       }
       function Bullet(text) {
         let list = text.split("-").slice(1,);
@@ -66,8 +69,9 @@ function FoodItem() {
         if (item !== null){
             setItemValues(
             <div className = "food-item">
-                <img className = "arrow-right" onClick = {() => {oneUp()}} src = {arrow} alt = "none"></img>
-                <img className = "arrow-left" onClick = {() => {oneDown()}} src = {arrow} alt = "none"></img>
+                <Link to = "/menuitem" state={{fromNumber: fromNumber + 1}}><img className = "arrow-right" src = {arrow} alt = "none"></img></Link>
+                <Link to = "/menuitem" state={{fromNumber: fromNumber - 1}}><img className = "arrow-left" src = {arrow} alt = "none"></img></Link>
+                <Fade right>
                 <div className = "food-item-body">
                     <div className = "food-item-top">
                         <div className = "dish">
@@ -90,7 +94,9 @@ function FoodItem() {
                             {Bullet(item.steps)}
                         </div>
                     </div>
+
                 </div>
+                </Fade>
             </div>
             );
         }

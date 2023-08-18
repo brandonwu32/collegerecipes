@@ -7,10 +7,13 @@ import Fade from "react-reveal/Fade";
 
 
 function Home() {
+    const nextNumber = {
+        number: 1
+    };
     return (
         <div className="Home">
             <div className="arrow-right">
-                <Link to = "/menuitem/1"><p><img src={arrow} alt="None"></img></p></Link>
+                <Link to = "/menuitem" state={{fromNumber: 1}}><p><img src={arrow} alt="None"></img></p></Link>
             </div>
             <div className="home-image">
                 <img src={curry} className="bottom-left" alt="None"/>

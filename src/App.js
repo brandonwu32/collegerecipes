@@ -21,9 +21,9 @@ function App() {
           <NavBar></NavBar>
         </div>
           <Routes>
-            <Route exact path = "/" element = {<Home reference = "home"/>}></Route>
-            <Route exact path = "/menu" element = {<Menu/>}></Route>
-            <Route exact path = "/menuitem/:itemNumber" element = {<FoodItem/>}></Route>
+            <Route path = "/home" element = {<Home reference = "home"/>}></Route>
+            <Route path = "/menu" element = {<Menu/>}></Route>
+            <Route path = "/menuitem" element = {<FoodItem/>}></Route>
           </Routes>
       </div>
     </Router>

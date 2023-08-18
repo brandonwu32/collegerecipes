@@ -1,7 +1,7 @@
 {
   "name": "collegerecipes",
   "version": "0.1.0",
-  "homepage": "https://brandonwu32.github.io/collegerecipes/",
+  "homepage": "https://brandonwu32.github.io/collegerecipes",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
