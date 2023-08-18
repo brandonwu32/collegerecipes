@@ -1,7 +1,6 @@
 import './FoodItem.css';
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import arrow from "../static/arrow.svg";
 
@@ -20,6 +19,7 @@ function FoodItem() {
         axios.get(url, config)
         .then(res => {
           let tableEntries = res.data.records;
+          setPages(tableEntries.length);
           tableEntries.forEach(record => {
             let entry = record.fields;
             let item = {
@@ -38,8 +38,12 @@ function FoodItem() {
         .catch(err=> console.log(err));
       }, []);
       function oneUp(){
+        if (parseInt(itemNumber) === pages) {
+            alert("This is the last page of the cookbook");
+            return
+        }
         window.location.href = window.location.pathname.replace(itemNumber, parseInt(itemNumber) + 1)
-      }
+    }
       function oneDown(){
         if (parseInt(itemNumber) === 1){
             window.location.href = window.location.pathname.replace("menuitem/" + itemNumber, "")
@@ -48,9 +52,10 @@ function FoodItem() {
         window.location.href = window.location.pathname.replace(itemNumber, parseInt(itemNumber) - 1)
       }
       function Bullet(text) {
-        let list = text.split("-")
+        let list = text.split("-").slice(1,);
         let bulletList = []
-        list.map(bullet => {bulletList.push(<p className = "bullet">&bull; {bullet}</p>)});
+        list.map(bullet => {bulletList.push(<p className = "bullet">&bull; {bullet.trim()}</p>);
+    return (null)});
         return (
             <div className = "list">
                 {bulletList}

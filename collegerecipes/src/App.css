@@ -29,3 +29,13 @@
   position: fixed;
   padding-left: 70%;
 }
+
+@media (max-width: 780px){
+  .backdrop{
+    display: none;
+  }
+
+  .nav{
+    right: 5%;
+  }
+}

@@ -13,3 +13,15 @@
 }
 
 .navitem:hover {color: white}
+
+@media (max-width: 1030px){
+    .navitem{
+        font-size: 20pt;
+    }
+}
+
+@media (max-width: 780px){
+    .navbar{
+        flex-direction: column;
+    }
+}

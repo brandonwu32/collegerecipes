@@ -2,6 +2,7 @@ import "./Menu.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import Fade from "react-reveal/Fade";
 
 function Menu() {
     const [breakfasts, setBreakfasts] = useState([]);
@@ -9,6 +10,7 @@ function Menu() {
     const [dinners, setDinners] = useState([]);
     const [desserts, setDesserts] = useState([]);
     let [menuItems, setMenuItems] = useState([]);
+    const [menuLength, setMenuLength] = useState(0);
     useEffect(() => {
         const url = `https://api.airtable.com/v0/${process.env.REACT_APP_BASE_ID}/${process.env.REACT_APP_RECIPES_TOKEN}`;
         const config = {
@@ -32,6 +34,7 @@ function Menu() {
             items.push(item)
           });
           setMenuItems(items);
+          setMenuLength(items.length);
         })
         .catch(err=> console.log(err));
       }, []);
@@ -59,10 +62,16 @@ function Menu() {
                     <h1>Breakfast</h1>
                     {breakfasts.map(item => (
                         <div>
-                            <Link className="item" to = {"/menuitem/" + item.item_number}>
-                                <p>{item.dish_name}</p>
-                                <p>{item.item_number}</p>
-                            </Link>
+                            <Fade right>
+                                <Link className="item" to = {"/menuitem/" + item.item_number}>
+                                    <div className="dish-name">
+                                        <p>{item.dish_name}</p>
+                                    </div>
+                                    <div className="item-number">
+                                        <p>{item.item_number}</p>
+                                    </div>
+                                </Link>
+                            </Fade>
                         </div>
                     ))}
                 </div>
@@ -70,10 +79,16 @@ function Menu() {
                     <h1>Lunch</h1>
                     {lunches.map(item => (
                         <div>
-                            <Link className="item" to = {"/menuitem/" + item.item_number}>
-                                <p>{item.dish_name}</p>
-                                <p>{item.item_number}</p>
-                            </Link>
+                            <Fade right>
+                                <Link className="item" to = {"/menuitem/" + item.item_number}>
+                                    <div className="dish-name">
+                                        <p>{item.dish_name}</p>
+                                    </div>
+                                    <div className="item-number">
+                                        <p>{item.item_number}</p>
+                                    </div>
+                                </Link>
+                            </Fade>
                         </div>
                     ))}
                 </div>
@@ -83,10 +98,16 @@ function Menu() {
                     <h1>Dinner</h1>
                     {dinners.map(item => (
                         <div>
-                            <Link className="item" to = {"/menuitem/" + item.item_number}>
-                                <p>{item.dish_name}</p>
-                                <p>{item.item_number}</p>
-                            </Link>
+                            <Fade right>
+                                <Link className="item" to = {"/menuitem/" + item.item_number}>
+                                    <div className="dish-name">
+                                        <p>{item.dish_name}</p>
+                                    </div>
+                                    <div className="item-number">
+                                        <p>{item.item_number}</p>
+                                    </div>
+                                </Link>
+                            </Fade>
                         </div>
                     ))}
                 </div>
@@ -94,14 +115,21 @@ function Menu() {
                     <h1>Dessert</h1>
                     {desserts.map(item => (
                         <div>
-                            <Link className="item" to = {"/menuitem/" + item.item_number}>
-                                <p>{item.dish_name}</p>
-                                <p>{item.item_number}</p>
-                            </Link>
+                            <Fade right>
+                                <Link className="item" to = {"/menuitem/" + item.item_number}>
+                                    <div className="dish-name">
+                                        <p>{item.dish_name}</p>
+                                    </div>
+                                    <div className="item-number">
+                                        <p>{item.item_number}</p>
+                                    </div>
+                                </Link>
+                            </Fade>
                         </div>
                     ))}
                 </div>
             </div>
+            <h3 className="menu-title">Items: {menuLength}</h3>
         </div>
     );
 }
