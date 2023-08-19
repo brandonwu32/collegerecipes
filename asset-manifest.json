@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/collegerecipes/static/css/main.bbc4a5c4.css",
-    "main.js": "/collegerecipes/static/js/main.7bb0cd71.js",
+    "main.js": "/collegerecipes/static/js/main.e1b40d12.js",
     "static/js/787.08395c4b.chunk.js": "/collegerecipes/static/js/787.08395c4b.chunk.js",
     "static/media/curry.svg": "/collegerecipes/static/media/curry.d1091592988e876edfd8ad1959650d0a.svg",
     "static/media/Inter-VariableFont_slnt,wght.ttf": "/collegerecipes/static/media/Inter-VariableFont_slnt,wght.aadb65ac45347ff46699.ttf",
@@ -10,11 +10,11 @@
     "index.html": "/collegerecipes/index.html",
     "static/media/arrow.svg": "/collegerecipes/static/media/arrow.32fd8dc7a7807757d067ac74b536d782.svg",
     "main.bbc4a5c4.css.map": "/collegerecipes/static/css/main.bbc4a5c4.css.map",
-    "main.7bb0cd71.js.map": "/collegerecipes/static/js/main.7bb0cd71.js.map",
+    "main.e1b40d12.js.map": "/collegerecipes/static/js/main.e1b40d12.js.map",
     "787.08395c4b.chunk.js.map": "/collegerecipes/static/js/787.08395c4b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bbc4a5c4.css",
-    "static/js/main.7bb0cd71.js"
+    "static/js/main.e1b40d12.js"
   ]
 }
